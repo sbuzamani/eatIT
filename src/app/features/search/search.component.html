@@ -1,4 +1,9 @@
-<input type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (keypress)="PerformSearch()"/>
+<input type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (input)="PerformSearch()"/>
 <div *ngIf="hasResults">
-  Results are shown heres
+  <a *ngFor="let recipyResult of recipyResultList" (click)="SelectRecipe(recipyResult)">
+    {{recipyResult.name}}
+  </a>
+  <div *ngIf="recipyResultList?.length == 0">
+    {{noResultsText}}
+  </div>
 </div>
