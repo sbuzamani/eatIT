@@ -1,0 +1,32 @@
+.related-content-wrap {
+    width: 100%;
+    background-color: #e0e0e087;
+    padding: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .related-content {
+        width: 800px;
+        margin: 0 auto;
+
+        h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 35px;
+        }
+
+        ul {
+            li {
+                padding: 8px 0;
+
+                a{
+                    color: #8BC34A;
+                    cursor: pointer;
+
+                    &:hover {
+                        border-bottom: 1px solid #8BC34A;
+                    }
+                }
+            }
+        }
+    }
+    
+}

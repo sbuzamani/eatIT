@@ -1,5 +1,5 @@
 <span class="search-icon fas fa-search"></span><input class="search" type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (input)="PerformSearch()"/><button class="search">SEARCH</button>
-<div *ngIf="hasResults">
+<div *ngIf="hasResults" class="resultslist">
   <a *ngFor="let recipyResult of recipyResultList" (click)="SelectRecipe(recipyResult)">
     {{recipyResult.name}}
   </a>
