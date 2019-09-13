@@ -1,3 +1,26 @@
-<p>
-  recipe works!
-</p>
+<div *ngIf="recipe">
+  <img src="{{recipe.image}}" alt="" />
+  
+  <div>Description:</div>
+  <div>{{recipe.description }}</div>
+  <div>{{recipe.name}}</div>
+
+
+  <div>Ingredients:</div>
+  <ul>
+  <li *ngFor="let ing of recipe.ingredients">
+      {{ing.name}} {{ing.amount}} {{ing.unit}}
+  </li>
+  </ul>
+
+  <div>Steps:</div>
+  <ul>
+  <li *ngFor="let step of recipe.steps">
+      {{step.description}} 
+  </li>
+  </ul>
+
+  <div>Notes:</div>
+  <p>{{recipe.notes}}</p>
+
+</div>
