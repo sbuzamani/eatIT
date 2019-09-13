@@ -1,3 +1,8 @@
-<p>
-  related-content works!
-</p>
+<div *ngIf="relatedContentList">
+  <h1>Related Content:</h1>
+  <ul>
+    <li *ngFor="let relItem of relatedContentList">
+      <a (click)="clickRelatedItem(relItem)">{{relItem.name}}</a> 
+    </li>
+  </ul>
+</div>

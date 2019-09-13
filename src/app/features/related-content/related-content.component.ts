@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Recipe } from 'src/app/model/recipe.model';
 
 @Component({
   selector: 'app-related-content',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./related-content.component.sass']
 })
 export class RelatedContentComponent implements OnInit {
+@Input()
+public relatedContentList: Array<Recipe>
+
+@Output()
+public selectedRelatedContent = new EventEmitter<Recipe>()
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public clickRelatedItem(recipe: Recipe){
+    this.selectedRelatedContent.emit(recipe)
   }
 
 }

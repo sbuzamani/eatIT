@@ -11,9 +11,18 @@ export class AppComponent implements OnInit {
 
   public recipe: Recipe;
   public recipeList: Recipe[];
+  public relatedContent: Recipe[];
 
   constructor(private http: HttpClient) {
 
+  }
+
+  public setRelatedContent(){
+    this.relatedContent = this.recipeList.slice(1,6);
+  }
+
+  public relatedContentChange(recipe: Recipe):void{
+    this.recipe = recipe
   }
 
   ngOnInit(): void {
@@ -21,6 +30,7 @@ export class AppComponent implements OnInit {
     .subscribe((x: any) => {
       this.recipe = x.recipe.map(Recipe.fromAny)[0];
       this.recipeList = x.recipe.map(Recipe.fromAny);
+      this.setRelatedContent();
     });
   }
 }
