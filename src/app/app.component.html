@@ -1,6 +1,6 @@
 <header>
         <div class="logo"><span class="eat">eat</span>IT</div>
-        <app-search></app-search>
+        <app-search [recipyList]="recipeList" (selectedRecipe)="recipe = $event"></app-search>
 </header>        
 <app-recipe *ngIf="recipe" [recipe]="recipe" ></app-recipe>
-<app-related-content></app-related-content>
+<app-related-content [relatedContentList]="relatedContent" (selectedRelatedContent)="relatedContentChange($event)" ></app-related-content>

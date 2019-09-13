@@ -1,4 +1,9 @@
-<span class="search-icon fas fa-search"></span><input class="search" type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (keypress)="PerformSearch()"/><button class="search">SEARCH</button>
+<span class="search-icon fas fa-search"></span><input class="search" type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (input)="PerformSearch()"/><button class="search">SEARCH</button>
 <div *ngIf="hasResults">
-  Results are shown heres
+  <a *ngFor="let recipyResult of recipyResultList" (click)="SelectRecipe(recipyResult)">
+    {{recipyResult.name}}
+  </a>
+  <div *ngIf="recipyResultList?.length == 0">
+    {{noResultsText}}
+  </div>
 </div>
