@@ -1,3 +1,4 @@
-<p>
-  search works!
-</p>
+<input type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (keypress)="PerformSearch()"/>
+<div *ngIf="hasResults">
+  Results are shown heres
+</div>

@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  public hasResults: boolean = false;
+  public searchText: string = "";
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public PerformSearch() {
+    if(this.searchText.length > 3){
+      //TODO search service here.
+      this.hasResults = true;
+    }
+
   }
 
 }
