@@ -22,8 +22,7 @@ export class Recipe {
     if (!item) {
       return;
     }
-    return new Recipe(item.id, item.name, item.description, item.tags, item.image, item.ingredients.map(Ingredient.fromAny),
-      IngredientGroup.fromAny(item.ingredientGroup), item.steps.map(Step.fromAny), item.notes, item.forked)
-
-          }
+    return new Recipe(item.id, item.name, item.description, item.tags, item.image, item.ingredient.map(Ingredient.fromAny),
+      IngredientGroup.fromAny(item.ingredientGroup), item.step.map(Step.fromAny), item.notes, item.forked)
+  }
 }

@@ -1,9 +1,15 @@
 export class Step {
-  static fromAny(fromAny: any): Step[] {
-    throw new Error("Method not implemented.");
-  }
+  
 
     constructor (
         public description: string
     ) {}
+
+    public static fromAny(item: any): Step {
+      if(!item){
+        return null;
+      }
+
+      return new Step(item.description)
+    }
 }
