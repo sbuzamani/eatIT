@@ -1,0 +1,22 @@
+.search-icon {
+    padding: 8px;
+    background-color: #d6d6d6;
+    height: 33px;
+    box-sizing: border-box;
+}
+
+.search {
+    padding: 7px;
+    width: 600px;
+
+    &:focus {
+        outline: none;
+    }
+}
+button.search {
+    padding: 9px;
+    color: white;
+    background-color: #8BC34A;
+    border: none;
+    width: 99px;
+}

@@ -1,26 +1,29 @@
-<div *ngIf="recipe">
-  <img src="{{recipe.image}}" alt="" />
+<div *ngIf="recipe" class="recipe">
+
+  <h1>Featured Recipe</h1>
+  <div class="">
+    <!-- <img src="{{recipe.image}}" alt="" /> -->
+    <img src="../../../assets/images/foodimage.jpg"/>
+  </div>
   
-  <div>Description:</div>
+  <h2>{{recipe.name}}</h2>
+  <h4>Description:</h4>
   <div>{{recipe.description }}</div>
-  <div>{{recipe.name}}</div>
-
-
-  <div>Ingredients:</div>
+  <h4>Ingredients:</h4>
   <ul>
   <li *ngFor="let ing of recipe.ingredients">
       {{ing.name}} {{ing.amount}} {{ing.unit}}
   </li>
   </ul>
 
-  <div>Steps:</div>
+  <h4>Steps:</h4>
   <ul>
   <li *ngFor="let step of recipe.steps">
       {{step.description}} 
   </li>
   </ul>
 
-  <div>Notes:</div>
+  <h4>Notes:</h4>
   <p>{{recipe.notes}}</p>
 
 </div>

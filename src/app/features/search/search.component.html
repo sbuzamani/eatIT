@@ -1,4 +1,4 @@
-<input type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (keypress)="PerformSearch()"/>
+<span class="search-icon fas fa-search"></span><input class="search" type="text" id="keyword" placeholder="Type search here..." autofocus [(ngModel)]="searchText" (keypress)="PerformSearch()"/><button class="search">SEARCH</button>
 <div *ngIf="hasResults">
   Results are shown heres
 </div>
